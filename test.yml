@@ -1,0 +1,13 @@
+- name: test my new module
+  hosts: all
+  gather_facts: no
+  tasks:
+  - name: run the new module
+    my_test:
+      name: 'hello'
+      new: true
+    register: testout
+  - name: dump test output
+    debug:
+      msg: '{{ testout }}'
+
